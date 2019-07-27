@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Houston</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css" integrity="sha256-7LuOHbsBImoaCHWzjqQDLeGK9kq/rZZqIr6Gtkz0WzI=" crossorigin="anonymous" />
+  </head>
+  <body>
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @params.each do |key, value| %>
+          <tr>
+            <td><%= key %></td>
+            <td><%= value %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @request_values.each do |method, value| %>
+          <tr>
+            <td><%= method %></td>
+            <td><%= CGI.escapeHTML(value) %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
