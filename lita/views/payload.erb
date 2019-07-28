@@ -7,22 +7,7 @@
   </head>
   <body>
     <div class='container'>
-      <table>
-        <thead>
-           <tr>
-            <th>Key</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @payload.each do |key, value| %>
-          <tr>
-            <td><code><%= key %></code></td>
-            <td><code><%= value %></code></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
+      <pre><%= JSON.pretty_unparse(@payload) %></pre>
     </div>
   </body>
 </html>
