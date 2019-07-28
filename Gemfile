@@ -5,7 +5,7 @@ ruby '2.6.3'
 
 gem 'dotenv', '~> 2.7', '>= 2.7.4'
 gem 'lita', '~> 4.7', '>= 4.7.1'
-gem 'lita-slack', '~> 1.8'
+# gem 'lita-slack', '~> 1.8'
 
 group :development do
   gem 'rubocop', require: false
