@@ -18,7 +18,7 @@ Lita.configure do |config|
   # general config
   config.robot.name   = 'houston'
   config.robot.locale = :en
-  config.http.port    = ENV['HTTP_PORT']
+  config.http.port    = ENV['PORT']
 
   # slack config
   config.adapters.slack.token      = ENV['SLACK_TOKEN']
