@@ -7,7 +7,7 @@ Dir['./lita/**/*.rb'].each { |file| require file }
 Lita.configure do |config|
   if ENV['LITA_ENVIRONMENT'] == 'production'
     config.redis[:url]     = ENV['REDIS_URL']
-    config.robot.adapter   = :slack
+    # config.robot.adapter   = :slack
     config.robot.log_level = :info
   else
     config.redis           = { host: '127.0.0.1', port: 6379 }
