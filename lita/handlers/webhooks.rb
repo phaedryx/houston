@@ -26,7 +26,7 @@ module Lita
       end
 
       def webhooks(request, response)
-        payload = request.body.string
+        payload = JSON.parse(request.body.string)
 
         case request.env['HTTP_X_GITHUB_EVENT']
         when 'create' then create(payload)
@@ -38,7 +38,7 @@ module Lita
       end
 
       def payload(_request, response)
-        response.write(render_template('payload', payload: redis.get('payload')))
+        response.write(render_template('payload', payload: redis.get('payload').to_json))
       end
 
       private
