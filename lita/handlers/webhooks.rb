@@ -38,7 +38,7 @@ module Lita
       end
 
       def payload(_request, response)
-        response.write(render_template('payload', payload: redis.get('payload').to_json))
+        response.write(render_template('payload', payload: redis.get('payload')))
       end
 
       private
