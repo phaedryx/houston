@@ -38,25 +38,30 @@ module Lita
       end
 
       def payload(_request, response)
+        action = redis.get('action')
         payload = JSON.parse(redis.get('payload'))
-        response.write(render_template('payload', payload: payload))
+        response.write(render_template('payload', action: action, payload: payload))
       end
 
       private
 
       def create(payload)
+        redis.set('action', 'create')
         redis.set('payload', payload)
       end
 
       def pull_request(payload)
+        redis.set('action', 'pull_request')
         redis.set('payload', payload)
       end
 
       def pull_request_review(payload)
+        redis.set('action', 'pull_request_review')
         redis.set('payload', payload)
       end
 
       def push(payload)
+        redis.set('action', 'push')
         redis.set('payload', payload)
       end
     end
