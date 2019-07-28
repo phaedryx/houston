@@ -34,7 +34,7 @@ module Lita
         when 'pull_request_review' then pull_request_review(payload)
         when 'push' then push(payload)
         end
-        response.write('ok')
+        response.write('200 OK')
       end
 
       def payload(_request, response)
