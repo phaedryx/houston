@@ -38,7 +38,7 @@ module Lita
       end
 
       def payload(_request, response)
-        payload = JSON.pretty_generate(redis.get('payload'))
+        payload = JSON.pretty_unparse(redis.get('payload'))
         response.write(render_template('payload', payload: payload))
       end
 
