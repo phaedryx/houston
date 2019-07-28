@@ -21,7 +21,7 @@ Lita.configure do |config|
   config.http.port    = ENV['HTTP_PORT']
 
   # slack config
-  config.adapters.slack.token      = ENV['SLACK_TOKEN']
-  config.adapters.slack.link_names = true
-  config.adapters.slack.parse      = 'full'
+  # config.adapters.slack.token      = ENV['SLACK_TOKEN']
+  # config.adapters.slack.link_names = true
+  # config.adapters.slack.parse      = 'full'
 end
