@@ -5,7 +5,7 @@ require 'dotenv/load'
 Dir['./lita/**/*.rb'].each { |file| require file }
 
 Lita.configure do |config|
-  if ENV['LITA_ENVIRONMENT'] == 'production'
+  if ENV['RACK_ENV'] == 'production'
     config.redis[:url]     = ENV['REDIS_URL']
     config.robot.adapter   = :slack
     config.robot.log_level = :info
